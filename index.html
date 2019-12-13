@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PicHobby</title>
+</head>
+<body>
+    <h1>Pic hobby testing</h1>
+
+    <button>Get Pics</button>
+
+    <ul class="pics"></ul>
+    
+    <script>
+        const mybtn = document.querySelector('button');
+
+        mybtn.addEventListener('click', getPics);
+
+        function getPics(e) {
+            let xhr = new XMLHttpRequest();
+            xhr.open('GET', 'http://127.0.0.1:5000/pics');
+
+            xhr.onload = function () {
+                if (this.status === 200) {
+                    console.log('success');
+                }
+                else{
+                    console.log('failed');
+                    
+                }
+            }
+            xhr.send()
+        }
+        
+    </script>
+</body>
+</html>
