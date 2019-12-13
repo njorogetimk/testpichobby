@@ -20,7 +20,7 @@
 
         function getPics(e) {
             let xhr = new XMLHttpRequest();
-            xhr.open('GET', 'http://127.0.0.1:5000/pics');
+            xhr.open('GET', 'https://pichobby.herokuapp.com/pics');
 
             xhr.onload = function () {
                 if (this.status === 200) {
